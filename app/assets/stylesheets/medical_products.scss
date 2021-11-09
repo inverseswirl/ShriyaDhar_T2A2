@@ -17,7 +17,7 @@ body{
 
 .field{
     color: white;
-    background-color: cornflowerblue;
+    background-color: rgb(187, 208, 248);
     margin-left: 20px;
     width: 200px;
     padding:20px;
@@ -26,4 +26,9 @@ body{
 
 .actions{
     padding: 20px;
+
+}
+
+.container-flex{
+   display: flex;
 }

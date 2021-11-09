@@ -7,8 +7,13 @@ class MedicalProductsController < ApplicationController
     
   end
   def new
-   
+        
   end
+
+  def create
+   p params
+  end
+
   def edit 
 
   end

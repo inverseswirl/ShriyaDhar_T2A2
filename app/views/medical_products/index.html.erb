@@ -3,11 +3,14 @@
 
 
 
-<%= button_to 'Buy products', new_medical_product_path, method: :get %>
+<%= button_to 'Buy products', medical_products_path, method: :get %>
 
 
 <br>
-<button><%= button_to 'Add new products as a vendor', new_medical_product_path, method: :get %></button>
+<%= button_to 'Add new products as a vendor', new_medical_product_path, method: :get %>
 
-
+<ul><li>
+     <%=@products %>
+</li>
+</ul>
 
