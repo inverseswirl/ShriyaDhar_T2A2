@@ -1,6 +1,41 @@
 <h1>Welcome to the Vendor product listing! </h1>
 
-<%= form_with model: @products, url: "/medical_products", method: :post do |form| %>
+<h2>Add vendor profile</h2>
+<%= form_with model: Vendor.new, url: "/medical_products", method: :post do |form| %>
+  <div class="container-flex">
+  <div class="field">
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+   <div class="field">
+    <%= form.label :ratings, id: "ratings" %><br>
+    <%= form.number_field :vendor_id, min: 1, max: 5 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %><br>
+    <%= form.text_field :city %>
+  </div>
+  <div class="field">
+    <%= form.label :state %><br>
+    <%= form.text_field :state %>
+  </div>
+  <div class="field">
+    <%= form.label :zipcode %><br>
+    <%= form.text_field :zipcode %>
+  </div>
+</div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<h2>Add new products in the products list</h2> 
+
+
+<%= form_with model: Product.new, url: "/medical_products", method: :post do |form| %>
   <div class="container-flex">
   <div class="field">
     <%= form.label :product_name %><br>
@@ -22,7 +57,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :category %><br>
+    <%= form.label :selling_price %><br>
    <%= form.number_field :selling_price, in: 1.0..130.0,  step: 0.1 %>
   </div>
   </div>
