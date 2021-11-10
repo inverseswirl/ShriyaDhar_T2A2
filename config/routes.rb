@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   
   resources :medical_products
   post '/medical_products/new', to: 'medical_products#create'
-  resources :vendors
+  resources :vendors 
+
+
+
  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
  root 'medical_products#index'

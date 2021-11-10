@@ -1,4 +1,5 @@
 class VendorsController < ApplicationController
+  attr_protected = :id
   def index
     @vendors = Vendor.all
   end
@@ -26,7 +27,8 @@ class VendorsController < ApplicationController
  
     @vendor= Vendor.new(name: name, city: city, state: state, zipcode: zipcode)
    if @vendor.save
-      redirect_to new_medical_product_path
+     
+      redirect_to @vendor
      
     else 
      render :new, status: :unprocessable_entity
