@@ -1,0 +1,44 @@
+<h1 class="headline">Edit  Profile</h1>
+
+
+<%= form_with model: @vendor  do|form| %>
+  <div class="container-flex">
+    <div class="field">
+      <%= form.label :name %><br>
+      <%= form.text_field :name, :class => "inputs" %>
+      <% @vendor.errors.full_messages_for(:name).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+    </div>
+ 
+
+    <div class="field">
+      <%= form.label :city %><br>
+      <%= form.text_field :city %>
+       <% @vendor.errors.full_messages_for(:city).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= form.label :state %><br>
+      <%= form.text_field :state %>
+       <% @vendor.errors.full_messages_for(:state).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= form.label :zipcode %><br>
+      <%= form.text_field :zipcode %>
+      <% @vendor.errors.full_messages_for(:zipcode).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+    </div>
+  </div>
+
+
+    <%= form.submit %>
+  </div>
+
+<% end %>

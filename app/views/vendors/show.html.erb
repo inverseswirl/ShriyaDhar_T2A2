@@ -1,0 +1,24 @@
+
+
+
+
+<table class ="vendor_info_table">
+<tr>
+    <th>No.</th>
+    <th>Name</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zipcode</th>
+</tr> 
+
+<tr> 
+<td class="vendor_info"> <%= @vendor.id %>  </td> 
+<td class="vendor_info"> <%= @vendor.name %>  </td> 
+<td class="vendor_info"> <%= @vendor.city %> </td> 
+ <td class="vendor_info"> <%= @vendor.state %> </td> 
+  <td class="vendor_info"> <%= @vendor.zipcode %>  </td>  
+</tr>
+
+</table> 
+
+<%= button_to 'Edit information',   edit_vendor_path, method: :get, class: "btn2" %>

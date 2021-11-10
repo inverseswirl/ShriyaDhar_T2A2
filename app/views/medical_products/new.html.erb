@@ -1,50 +1,26 @@
-<h1>Welcome to the Vendor product listing! </h1>
+<h1 class="headline">Add Products to sell</h1>
 
-
-<h2>Add vendor profile</h2>
-<%= form_with model: Vendor.new, url: "/medical_products", method: :post do |form| %>
-  <div class="container-flex">
-  <div class="field">
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </div>
-   <div class="field">
-    <%= form.label :ratings, id: "ratings" %><br>
-    <%= form.number_field :vendor_id, min: 1, max: 5 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city %><br>
-    <%= form.text_field :city %>
-  </div>
-  <div class="field">
-    <%= form.label :state %><br>
-    <%= form.text_field :state %>
-  </div>
-  <div class="field">
-    <%= form.label :zipcode %><br>
-    <%= form.text_field :zipcode %>
-  </div>
+<div class="vendor_btns">
+<%= button_to 'Add new vendor info', new_vendor_path, method: :get, :class => "btn3 add_vendor" %>
+<%#= button_to 'Existing Member info', vendor_path, method: :get, :class => "btn3" %>
 </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
 
 
-<h2>Add new products in the products list</h2> 
 
-
-<%= form_with model: Product.new, url: "/medical_products", method: :post do |form| %>
+<%= form_with model: @product do |form| %>
   <div class="container-flex">
   <div class="field">
     <%= form.label :product_name %><br>
     <%= form.text_field :product_name %>
+  
   </div>
   <div class="field">
     <%= form.label :product_type %><br>
     <%= form.text_field :product_type %>
+   <% @product.errors.full_messages_for(:product_type).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
   </div>
 
   <div class="field">
@@ -53,8 +29,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :vendor_id, id: "vendor_if" %><br>
-    <%= form.number_field :vendor_id, min: 1, max: 5 %>
+    <%= form.label :vendor_id, 'Vendor Id' %><br>
+    <%= form.number_field :vendor_id, in: 1..100,  step: 1 %>
   </div>
 
   <div class="field">
@@ -63,8 +39,9 @@
   </div>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form_btn">
+    <%= form.submit 'Save' %>
   </div>
 <% end %>
 
+<%= button_to 'Check your listed products', medical_products_path, method: :get, :class => "btn2" =%>

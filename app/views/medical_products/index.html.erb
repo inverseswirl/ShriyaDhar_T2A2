@@ -3,14 +3,10 @@
 
 <%= image_tag 'gear.png', alt: 'css',:class => "gear_rotating"%>
 
-<%= button_to 'Buy products', medical_products_path, method: :get %>
+<%= button_to 'Buy products', medical_products_path, method: :get, :class => "btn"%>
 
 
 <br>
-<%= button_to 'Sell as a vendor', new_medical_product_path, method: :get %>
+<%= button_to 'Sell as a vendor',  new_vendor_path, method: :get, :class => "btn" %>
 
-<%# <ul><li>
-     <%=@products.product_name %>
-<%# </li> %>
-<%# </ul>%> 
 
