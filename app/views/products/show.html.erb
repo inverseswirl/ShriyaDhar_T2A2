@@ -37,10 +37,10 @@
 
 
 
-<%= button_to 'Edit information',   edit_medical_product_path, method: :get, class: "btn2" %>
-<%= button_to 'Back',   new_medical_product_path, method: :get, class: "btn2" %>
+<%= button_to 'Edit information',   edit_product_path, method: :get, class: "btn2" %>
+<%= button_to 'Back',   new_product_path, method: :get, class: "btn2" %>
 <ul>
- <li><%= link_to "Destroy", medical_product_path(@product),
+ <li><%= link_to "Destroy", product_path(@product),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %></li>
 </ul>

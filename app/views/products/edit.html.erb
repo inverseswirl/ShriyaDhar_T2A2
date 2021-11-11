@@ -1,0 +1,56 @@
+<h1 class="headline">Add Products to sell</h1>
+
+<div class="vendor_btns">
+<%= button_to 'Add new vendor info', new_vendor_path, method: :get, :class => "btn3 add_vendor" %>
+<%#= button_to 'Existing Member info', vendor_path, method: :get, :class => "btn3" %>
+</div>
+
+
+
+
+<%= form_with model: @product do |form| %>
+  <div class="container-flex">
+  <div class="field">
+    <%= form.label :product_name %><br>
+    <%= form.text_field :product_name %>
+    <% @product.errors.full_messages_for(:product_name).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+  </div>
+  <div class="field">
+    <%= form.label :product_type %><br>
+    <%= form.text_field :product_type %>
+   <% @product.errors.full_messages_for(:product_type).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_description %><br>
+    <%= form.text_area :product_description %>
+      <% @product.errors.full_messages_for(:product_description).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vendor_id, 'Vendor Id' %><br>
+    <%= form.number_field :vendor_id, in: 1..100,  step: 1 %>
+      <% @product.errors.full_messages_for(:vendor_id).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :selling_price %><br>
+   <%= form.number_field :selling_price, in: 1.0..130.0,  step: 0.1 %>
+     <% @product.errors.full_messages_for(:selling_price).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+  </div>
+  </div>
+
+  <div class="form_btn">
+    <%= form.submit 'Update Product' %>
+  </div>
+<% end %>
