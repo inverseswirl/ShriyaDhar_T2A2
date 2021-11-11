@@ -23,11 +23,13 @@ class ProductsController < ApplicationController
     product_description =  params[:product][:product_description]
     vendor_id =  params[:product][:vendor_id]
     selling_price =  params[:product][:selling_price]
+    image_filename =  params[:product][:image_filename]
       
     @product= Product.new( product_name:  product_name,  product_type: product_type,product_description:  product_description, vendor_id: vendor_id,
-    selling_price: selling_price )
+    selling_price: selling_price,image_filename: image_filename )
   if @product.save
-      redirect_to  medical_product_path(@product)
+      upload_file
+      redirect_to  product_path(@product)
     else 
     render :new, status: :unprocessable_entity
   end
@@ -46,6 +48,7 @@ class ProductsController < ApplicationController
     @product= Product.find(params[:id])
 
     if @product.update(product_params)
+      upload_file 
       redirect_to  product_path(@product)
     else
       render :edit, status: :unprocessable_entity
@@ -54,11 +57,21 @@ class ProductsController < ApplicationController
 
 
 
-
+   def upload_file
+     if file_uploaded = params[:product][:image_filename]
+        pathname = Rails.root.join 'public', 'images', file_uploaded.original_filename
+        File.open(pathname, 'wb') do |file|
+          file.write file_uploaded.read
+        end
+        puts File.exists?("file_uploaded")
+      
+        @product.update_attribute :image_filename, file_uploaded.original_filename
+     end
+   end
 
   
   private
   def product_params
-    params.require(:product).permit(:product_name, :product_type,:product_description, :vendor_id, :selling_price)
+    params.require(:product).permit(:product_name, :product_type,:product_description, :vendor_id, :selling_price, :image_filename)
   end 
 end

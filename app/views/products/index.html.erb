@@ -6,4 +6,31 @@
 
 
 <br>
-<%= button_to 'sell as a vendor',  new_vendor_path, method: :get, :class => "btn" %>
+<%= button_to 'sell as a vendor',  new_vendor_path, method: :get, :class => "btn vendor_option" %>
+
+
+<div class="products_container">
+
+<% @products.each do |product| %>
+
+
+
+   <div>
+      <% if product.image_filename  %>
+        <%= image_tag "/images/#{product.image_filename}", width: '250px'%>
+        <% end %>
+    </div>
+   <%= product.product_name %>
+
+   <div><%= product.product_type %></div>
+  <div> <%= product.product_description %></div>
+  <div><%= product.selling_price%></div>
+
+<%  @vendor = Vendor.find(product.vendor_id) %>
+  <div><%= @vendor.city %>, <%= @vendor.state %>, <%= @vendor.zipcode %> </div>  
+
+<% end %>
+
+
+
+</div>

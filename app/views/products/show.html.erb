@@ -1,7 +1,12 @@
 
 
 <div class="medical_products">
-    <h1>product</h1>
+    <h1 class="headline">The Product</h1>
+    <div>
+      <% if @product.image_filename  %>
+        <%= image_tag "/images/#{@product.image_filename}", width: '250px'%>
+        <% end %>
+    </div>
     <div>
         <strong>Name: </strong>
         <%= @product.product_name %>
@@ -26,9 +31,6 @@
        <%= @vendor.city %>, <%= @vendor.state %>, <%= @vendor.zipcode %> 
     </div>
 
-
-
-   
 </div>
 
 

@@ -19,6 +19,14 @@ body{
 
 }
 
+
+
+// styling for product form............................
+strong{
+    padding: 10px 15px;
+}
+
+
 .headline{
     color:white;
     color: rgb(61, 103, 109);
@@ -50,7 +58,6 @@ body{
    background-color: rgba(18, 18, 18, 0.4);
    padding:20px;
    align-items: center;
-/* //    margin:5px; */
   
 }
 
@@ -115,11 +122,21 @@ body{
 }
 
 
-strong{
-    padding: 10px 15px;
-}
 
-/* // .medical_products{
-  
 
-// } */
+
+
+
+
+// stylig for medical products..........................
+.products_container{
+    background-color: white;
+    font-size: small;
+    color:rgb(61, 103, 109);
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    list-style-type: none;
+
+
+} 
