@@ -24,7 +24,7 @@
 <%= button_to 'Edit information',   edit_vendor_path, method: :get, class: "btn2" %>
 <%= button_to 'Back',   new_medical_product_path, method: :get, class: "btn2" %>
 <ul>
- <li><%= link_to "Destroy", vendor_path(@vendor),
+ <li><%= link_to "Destroy",  new_vendor_path,
                   method: :delete,
                   data: { confirm: "Are you sure?" } %></li>
 </ul>
