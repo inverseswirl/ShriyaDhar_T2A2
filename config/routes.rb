@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   
   resources :medical_products
   post '/medical_products/new', to: 'medical_products#create'
+
   resources :vendors 
 
 

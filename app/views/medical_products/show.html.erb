@@ -1,0 +1,46 @@
+
+
+<div class="medical_products">
+    <h1>product</h1>
+    <div>
+        <strong>Name: </strong>
+        <%= @product.product_name %>
+    </div>
+
+    <div>
+        <strong>Type: </strong>
+        <%= @product.product_type %>
+    </div>
+
+    <div>
+        <strong>Description: </strong>
+        <%= @product.product_description %>
+    </div>
+    <div>
+        <strong>Price: </strong>
+      $ <%= @product.selling_price %></p> 
+    </div>
+    <div>
+        <strong>Seller's Address: </strong>
+          <%  @vendor = Vendor.find(@product.vendor_id) %>
+       <%= @vendor.city %>, <%= @vendor.state %>, <%= @vendor.zipcode %> 
+    </div>
+
+
+
+   
+</div>
+
+
+
+
+
+
+
+<%= button_to 'Edit information',   edit_medical_product_path, method: :get, class: "btn2" %>
+<%= button_to 'Back',   new_medical_product_path, method: :get, class: "btn2" %>
+<ul>
+ <li><%= link_to "Destroy", medical_product_path(@product),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>

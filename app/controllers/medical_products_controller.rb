@@ -4,6 +4,11 @@ class MedicalProductsController < ApplicationController
     @products = Product.all
   end
   def show
+    @product = Product.find(params[:id])
+
+    if @product.nil?
+     render  :new
+    end
     
   end
   def new
@@ -21,7 +26,7 @@ class MedicalProductsController < ApplicationController
     @product= Product.new( product_name:  product_name,  product_type: product_type,product_description:  product_description, vendor_id: vendor_id,
      selling_price: selling_price )
    if @product.save
-      redirect_to  medical_products_path
+      redirect_to  medical_product_path(@product)
      
     else 
      render :new, status: :unprocessable_entity
@@ -43,6 +48,11 @@ class MedicalProductsController < ApplicationController
     end
   end
 
+
+
+
+
+  
   private
   def product_params
     params.require(:product).permit(:product_name, :product_type,:product_description, :vendor_id, :selling_price)
