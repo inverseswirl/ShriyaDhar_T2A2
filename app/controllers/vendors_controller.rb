@@ -1,5 +1,5 @@
 class VendorsController < ApplicationController
-  attr_protected = :id
+ 
   def index
     @vendors = Vendor.all
   end
@@ -52,9 +52,9 @@ class VendorsController < ApplicationController
     end
   end
 
-  private
+
   def destroy
-   @vendor = Vendor.find_by(params[:id])
+   @vendor = Vendor.find(params[:id])
    @vendor.destroy
    redirect_to medical_products_path
   end
