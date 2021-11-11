@@ -55,8 +55,9 @@
   </div>
 <% end %>
 
-<%#= button_to 'Check your listed products', render "vendorproducts", method: :get, :class => "btn2" =%>
+<%# = button_to 'Check your listed products', render "vendorproducts", method: :get, :class => "btn2" = %>
+<%= button_to 'Go to Home', medical_products_path, method: :get, :class => "btn2" =%>
 
 
-<%= render "vendorproducts" %>
+<%#= render "vendorproducts" %>
 
