@@ -2,11 +2,11 @@
 
 <%= image_tag 'gear.png', alt: 'css',:class => "gear_rotating"%>
 
-<%= button_to 'buy products',products_path, method: :get, :class => "btn"%>
+<%= button_to 'Buy med_products',products_path, method: :get, :class => "btn"%>
 
 
 <br>
-<%= button_to 'sell as a vendor',  new_vendor_path, method: :get, :class => "btn vendor_option" %>
+<%= button_to 'Sell as a vendor',  new_vendor_path, method: :get, :class => "btn vendor_option" %>
 
 
 <div class="products_container">
@@ -14,21 +14,24 @@
 <% @products.each do |product| %>
 
 
-
+<div class="inner-container">
    <div>
-      <% if product.image_filename  %>
-        <%= image_tag "/images/#{product.image_filename}", width: '250px'%>
+     <% if product.image_filename  %>
+        <%= image_tag "/images/#{product.image_filename}", width: '250px', class: 'product-image'%>
         <% end %>
     </div>
-   <%= product.product_name %>
+  <p> <strong>Name:</strong><%= product.product_name %></p>
 
-   <div><%= product.product_type %></div>
-  <div> <%= product.product_description %></div>
-  <div><%= product.selling_price%></div>
+     <p> <strong>Type:</strong><%= product.product_type %></p>
+    <p> <strong>Detail:</strong><%= product.product_description %></p>
+        <p> <strong>Price:</strong>$<%= product.selling_price%></p>
 
-<%  @vendor = Vendor.find(product.vendor_id) %>
-  <div><%= @vendor.city %>, <%= @vendor.state %>, <%= @vendor.zipcode %> </div>  
+  <% @vendor = Vendor.find(product.vendor_id) %>
+    <p> <strong>Price:</strong><%= @vendor.city %>, <%= @vendor.state %>, <%= @vendor.zipcode %> </p> 
+    <%= button_to  'Buy this', %>
 
+
+</div>
 <% end %>
 
 

@@ -8,15 +8,20 @@
     padding:0;
     font-family: 'Montserrat', sans-serif;
 }
+html{
+    height:100vh;
+    width:100vw;
+    overflow:hidden; 
+}
 body{
   
     height:100vh;
     width:100vw;
-    overflow-x:hidden;
+    overflow-y:scroll;
     background-image: linear-gradient(40deg,rgb(124, 176, 200), transparent 200%),linear-gradient(210deg,rgb(7, 255, 201), transparent 200%),url('https://cdn.pixabay.com/photo/2017/02/20/14/18/health-2082630_1280.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-
+    position:relative;
 }
 
 
@@ -93,12 +98,13 @@ strong{
     background-color: rgb(61, 103, 109);
     color:white;
     padding:8px;
-    border-radius: 4px;
     font-size: 1rem;
-    margin:0 auto;
-    margin-top: 20px;
+    margin-top: 5px;
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     cursor: pointer;
+    // position: fixed;
 
 }
 
@@ -114,12 +120,12 @@ strong{
     margin-top: 10px;
     display: flex; 
     flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-end;
+    // justify-content: flex-end;
+    // align-items: flex-end;
     cursor: pointer;
-
-
-}
+    // position: fixed ; 
+  
+    }
 
 
 
@@ -130,13 +136,32 @@ strong{
 
 // stylig for medical products..........................
 .products_container{
-    background-color: white;
-    font-size: small;
-    color:rgb(61, 103, 109);
+    background-color: rgba(18, 18, 18, 0.4);
+    font-size: 1rem;
+    color: white;
     display: flex;
     flex-direction: column;
-    width: 90%;
+    justify-content: center;
+    align-items:center;
     list-style-type: none;
-
+    position: absolute;
+    top:0;
+    width:50%;
+    margin:0 auto;
+    margin-top: 9rem;
+    left:20%;
+  
 
 } 
+
+.product-image{
+    padding: 10px;
+    margin:0 auto;
+    display:block;
+
+
+}
+
+.inner-container{
+    border-bottom: 2px solid white;
+}
