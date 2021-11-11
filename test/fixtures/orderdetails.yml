@@ -2,10 +2,10 @@
 
 one:
   total_quantity: 1
-  order: one
+  medorder: one
   product: one
 
 two:
   total_quantity: 1
-  order: two
+  medorder: two
   product: two

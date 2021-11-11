@@ -1,6 +1,6 @@
-class CreateOrders < ActiveRecord::Migration[6.1]
+class CreateMedorders < ActiveRecord::Migration[6.1]
   def change
-    create_table :orders do |t|
+    create_table :medorders do |t|
       t.timestamp :order_time
       t.references :customer, null: false, foreign_key: true
 

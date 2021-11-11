@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_11_140852) do
+ActiveRecord::Schema.define(version: 2021_11_11_232642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,22 +21,22 @@ ActiveRecord::Schema.define(version: 2021_11_11_140852) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "orderdetails", force: :cascade do |t|
-    t.integer "total_quantity"
-    t.bigint "order_id", null: false
-    t.bigint "product_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["order_id"], name: "index_orderdetails_on_order_id"
-    t.index ["product_id"], name: "index_orderdetails_on_product_id"
-  end
-
-  create_table "orders", force: :cascade do |t|
+  create_table "medorders", force: :cascade do |t|
     t.datetime "order_time"
     t.bigint "customer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["customer_id"], name: "index_orders_on_customer_id"
+    t.index ["customer_id"], name: "index_medorders_on_customer_id"
+  end
+
+  create_table "orderdetails", force: :cascade do |t|
+    t.integer "total_quantity"
+    t.bigint "medorder_id", null: false
+    t.bigint "product_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["medorder_id"], name: "index_orderdetails_on_medorder_id"
+    t.index ["product_id"], name: "index_orderdetails_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 2021_11_11_140852) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "orderdetails", "orders"
+  add_foreign_key "medorders", "customers"
+  add_foreign_key "orderdetails", "medorders"
   add_foreign_key "orderdetails", "products"
-  add_foreign_key "orders", "customers"
   add_foreign_key "products", "vendors"
 end
