@@ -62,9 +62,8 @@ class ProductsController < ApplicationController
         pathname = Rails.root.join 'public', 'images', file_uploaded.original_filename
         File.open(pathname, 'wb') do |file|
           file.write file_uploaded.read
-        end
-        puts File.exists?("file_uploaded")
-      
+        end 
+    
         @product.update_attribute :image_filename, file_uploaded.original_filename
      end
    end
