@@ -3,7 +3,7 @@
 <div class="medical_products">
     <h1 class="headline">The Product</h1>
     <div>
-      <% if @product.image_filename  %>
+      <% if  @product.image_filename  %>
         <%= image_tag "/images/#{@product.image_filename}", width: '250px'%>
         <% end %>
     </div>
@@ -31,11 +31,7 @@
        <%= @vendor.city %>, <%= @vendor.state %>, <%= @vendor.zipcode %> 
     </div>
       
-</div>
-
-
-
-
+ </div>
 
 
 
@@ -46,3 +42,6 @@
                   method: :delete,
                   data: { confirm: "Are you sure?" } %></li>
 </ul>
+
+
+

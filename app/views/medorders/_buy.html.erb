@@ -1,0 +1,13 @@
+ <%= form_with url: '/medorders' do |f|%>
+
+      <strong><%= f.label :total_quantity, "Quantity to buy" %></strong>
+      <%= f.number_field :total_quantity, in: 1..100, step: 1 %>
+     <%= f.submit "Add" %>
+     <% end %>
+
+<%= form_with url: '/medorders' do |f| %>
+  <strong><%= f.label :name, "Enter your name" %></strong>
+        <%= f.text_field :name %> 
+    <%= f.submit "Add" %>
+<% end %>
+

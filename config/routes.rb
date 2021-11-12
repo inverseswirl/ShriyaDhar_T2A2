@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :products
 
   resources :vendors
-  resources :orders
+  resources :medorders
+  # post '/medorders', to: 'medorders#create', as: 'medorders'
+  # get '/medorders/:id', to: 'medorders#create', as: 'medorder'
 
 
 

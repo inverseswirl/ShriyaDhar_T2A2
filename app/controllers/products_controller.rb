@@ -18,15 +18,9 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product_name =  params[:product][:product_name]
-    product_type =  params[:product][:product_type]
-    product_description =  params[:product][:product_description]
-    vendor_id =  params[:product][:vendor_id]
-    selling_price =  params[:product][:selling_price]
-    image_filename =  params[:product][:image_filename]
+  
       
-    @product= Product.new( product_name:  product_name,  product_type: product_type,product_description:  product_description, vendor_id: vendor_id,
-    selling_price: selling_price,image_filename: image_filename )
+    @product= Product.new(product_params) 
   if @product.save
       upload_file
       redirect_to  product_path(@product)
@@ -71,6 +65,6 @@ class ProductsController < ApplicationController
   
   private
   def product_params
-    params.require(:product).permit(:product_name, :product_type,:product_description, :vendor_id, :selling_price, :image_filename)
+    params.require(:product).permit(:product_name, :product_type, :product_description, :vendor_id, :selling_price, :image_filename)
   end 
 end

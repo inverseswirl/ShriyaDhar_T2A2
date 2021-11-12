@@ -1,0 +1,39 @@
+// Place all the styles related to the Medorders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// stylig for medical products..........................
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+.products_container{
+    background-color: rgba(18, 18, 18, 0.4);
+    font-size: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    list-style-type: none;
+    position: absolute;
+    top:0;
+    width:50%;
+    margin:0 auto;
+    margin-top: 9rem;
+    left:20%;
+  
+
+} 
+
+.product-image{
+    padding: 10px;
+    margin:0 auto;
+    display:block;
+
+
+}
+
+.inner-container{
+    border-bottom: 2px solid white;
+}

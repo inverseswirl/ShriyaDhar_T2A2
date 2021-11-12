@@ -19,13 +19,9 @@ class VendorsController < ApplicationController
   end
   
   def create
-    name =  params[:vendor][:name]
-    city =  params[:vendor][:city]
-    state =  params[:vendor][:state]
-    zipcode =  params[:vendor][:zipcode]
-    
+  
  
-    @vendor= Vendor.new(name: name, city: city, state: state, zipcode: zipcode)
+    @vendor= Vendor.new(vendor_params) 
    if @vendor.save
      
       redirect_to @vendor
