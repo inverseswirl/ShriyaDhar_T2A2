@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   resources :products
 
-  resources :vendors 
+  resources :vendors
+  resources :orders
 
 
 
