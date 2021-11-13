@@ -1,0 +1,36 @@
+ 
+ 
+<div> 
+<strong>Customer Name: </strong> <p> <%= @customer.name %></p><br>
+</div>
+
+
+ <strong>Customer Name: </strong> <p> <%= @customer.email %></p>
+
+
+
+
+
+
+
+
+<%#= link_to 'Place order', medorders_path%>
+
+
+
+
+
+
+
+
+
+
+
+<%= button_to 'Edit information',   edit_customer_path, method: :get, class: "btn2" %>
+<%= button_to 'Back',   new_customer_path, method: :get, class: "btn2" %>
+<%# <ul> %>
+ <%# <li><%#= link_to "Destroy", @customer, %>
+                  <%# method: :delete, %>
+                  <%# data: { confirm: "Are you sure?" } %> <%#</li%>
+<%# </ul> %>
+

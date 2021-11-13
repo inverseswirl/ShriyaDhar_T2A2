@@ -2,38 +2,10 @@
 
 <%= image_tag 'gear.png', alt: 'css',:class => "gear_rotating"%>
 
-<%= button_to 'Buy Med Products',  new_medorder_path, method: :get, :class => "btn"%>
+<%= button_to 'Buy Med Products',  new_customer_path, method: :get, :class => "btn"%>
 
 
 <br>
 <%= button_to 'Sell as a vendor',  new_vendor_path, method: :get, :class => "btn vendor_option" %>
 
 
-<div class="products_container">
-
-<% @products.each do |product| %>
-
-
-<div class="inner-container">
-   <div>
-     <% if product.image_filename  %>
-        <%= image_tag "/images/#{product.image_filename}", width: '250px', class: 'product-image'%>
-        <% end %>
-    </div>
-  <p> <strong>Name:</strong><%= product.product_name %></p>
-
-     <p> <strong>Type:</strong><%= product.product_type %></p>
-    <p> <strong>Detail:</strong><%= product.product_description %></p>
-        <p> <strong>Price:</strong>$<%= product.selling_price%></p>
-
-  <% @vendor = Vendor.find(product.vendor_id) %>
-    <p> <strong>Price:</strong><%= @vendor.city %>, <%= @vendor.state %>, <%= @vendor.zipcode %> </p> 
-    <%# <%= button_to  'Buy this', %>
-
-
-</div>
-<% end %>
-
-
-
-</div>

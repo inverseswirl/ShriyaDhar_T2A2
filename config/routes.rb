@@ -1,16 +1,22 @@
 Rails.application.routes.draw do
 
+
   devise_for :users
 
 
   resources :products
 
   resources :vendors
+  resources :customers
   resources :medorders
+  resources :meddetails
+
   # post '/medorders', to: 'medorders#create', as: 'medorders'
-  # get '/medorders/:id', to: 'medorders#create', as: 'medorder'
+  post '/medorders', to: 'medorders#create '
 
-
+  get 'customer/:id/medorder/:medorder_id', to: 'meddetails#new'
+  post 'customer/:id/medorder/:medorder_id', to: 'meddetails#create'
+  get  "/customer/:id/medorder/:medorder_id/meddetail/:meddetail_id", to: 'meddetails#show'
 
 
  

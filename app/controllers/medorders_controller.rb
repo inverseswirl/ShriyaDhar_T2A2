@@ -3,37 +3,43 @@ class MedordersController < ApplicationController
     @medorders = Medorder.all 
   end
   def new
+ 
+    @products = Product.all 
+    @medorders = Medorder.all
+    @customers=Customer.all
     @medorder = Medorder.new
-    @products = Product.all
-    @customer = Customer.new
-    @meddetail = Meddetail.new
+
+ 
+
+
    
 
 
   end
 
   def create
-
- 
-
+     
+        p @customer = Customer.find_by(name: params[:name])
+          @medorder = Medorder.new(customer_id: @customer.id)  
+          @medorder.save! 
+  
+      if   @medorder.save! 
+            redirect_to "/customer/#{@customer.id}/medorder/#{@medorder.id}" and return
+      else
+        render :new, status: :unprocessable_entity
+      end
 
   
-  
-      
-    p  @meddetail= Meddetail.new(total_quantity: params[:total_quantity]) 
-      # redirect_to medorder(@)
-     # if @product.save
-    #     upload_file
-    #     redirect_to  product_path(@product)
-    #   else 
-    #   render :new, status: :unprocessable_entity
-    # end
   end
 
   def show
-    @product = Product.find(params[:id])
 
-    if @product.nil?
+
+ 
+  #  p @meddetail = Meddetail.find(params[:id])
+  #  @pro= Product.all
+ 
+    if @medorder.nil?
      render  :new
     end
     

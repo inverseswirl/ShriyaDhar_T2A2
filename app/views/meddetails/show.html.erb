@@ -1,0 +1,15 @@
+
+
+
+
+
+<p> Order Id:<%= @meddetail.medorder_id%></p>
+   <%  @product= Product.find(@meddetail.product_id) %>
+<p> Product name: <%= @product.product_name%></p>
+<p> Product type: <%= @product.product_type%></p>
+<p> Product description: <%= @product.product_description%></p>
+<p> Quantity: <%= @meddetail.total_quantity%> item</p>
+     <%  @vendor = Vendor.find(@product.vendor_id) %>
+ <p>Sold by:   <%= @vendor.name %></p>
+
+

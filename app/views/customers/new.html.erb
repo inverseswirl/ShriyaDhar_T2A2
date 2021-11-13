@@ -1,0 +1,22 @@
+
+
+<h3 class="headline ">Enter new customer details</h3>
+
+<%= form_with  model: @customer do |f|%>
+
+     <strong><%= f.label :name, "Eneter your name" %></strong>
+      <%= f.text_field :name %><br>
+       <% @customer.errors.full_messages_for(:name).each do |message| %>
+          <div><%= message %></div>
+      <% end %><br>
+      <strong><%= f.label :email, "Your Email" %></strong>
+      <%= f.text_field :email %><br>
+       <% @customer.errors.full_messages_for(:email).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
+    <%= f.submit "Register" %>
+
+<% end %>
+
+
+<%= button_to 'Already Registered', new_medorder_path ,method: :get, class: 'btn'%>
