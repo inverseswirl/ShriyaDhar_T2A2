@@ -4,6 +4,37 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+
+
+@mixin home_style {
+    outline: none;
+    border: none;
+    background-color: rgba(61, 102, 109, 0.342);
+    color:black;
+    padding:8px;
+    margin: 0 0 1rem 0;
+    width:100%;
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    cursor: pointer;
+    position: fixed ; 
+    font-size: 1.1rem;
+}
+
+@mixin btn {
+    outline: none;
+    border: none;
+    background-color: rgb(61, 103, 109);
+    color:white;
+    padding:8px;
+    font-size: 1rem;
+    margin-top: 10px;
+    display: flex; 
+    cursor: pointer; 
+}
+
 *{
     margin: 0;
     padding:0;
@@ -19,11 +50,13 @@ body{
     height:100vh;
     width:100vw;
     overflow-y:scroll;
-    background-image: linear-gradient(40deg,rgb(124, 176, 200), transparent 200%),linear-gradient(210deg,rgb(7, 255, 201), transparent 200%),url('https://cdn.pixabay.com/photo/2017/02/20/14/18/health-2082630_1280.jpg');
+    background-image: linear-gradient(40deg,rgb(124, 176, 200), transparent 190%),linear-gradient(210deg,rgb(7, 255, 201), transparent 190%),url('https://cdn.pixabay.com/photo/2017/02/20/14/18/health-2082630_1280.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position:relative;
 }
+
+
 
 
 
@@ -70,14 +103,13 @@ strong{
 .gear_rotating{
    position: absolute;
    z-index: -2;
-   animation:rotate 50s linear forwards infinite;
+   animation:rotate 40s linear forwards infinite;
    height:5rem;
    width: 5rem;
    top: 16rem;
    left:48%;
    opacity:0.1;
-   background-image: linear-gradient(grey,tranparent);
-   
+   position: fixed; 
 
 }
 
@@ -93,49 +125,79 @@ strong{
     }
 }
 
+
+
+
+// general button...
 .btn{
-    outline: none;
-    border: none;
-    background-color: rgb(61, 103, 109);
-    color:white;
-    padding:8px;
-    font-size: 1rem;
+    @include btn;
     margin-top: 5px;
-    display: flex;
-    flex-direction: row;
     justify-content: flex-start;
-    cursor: pointer;
-    // position: fixed;
+    position: fixed;
 
 }
-
-
 
 .btn2{
     outline: none;
     border: none;
     background-color: rgb(61, 103, 109);
     color:white;
-    padding:8px;
-    font-size: 1rem;
     margin-top: 10px;
-    display: flex; 
-    flex-direction: row;
-    // justify-content: flex-end;
-    // align-items: flex-end;
-    cursor: pointer;
-    // position: fixed ; 
+
+    position: fixed ; 
   
-    }
+}
+
+
+
+
+// style log out and home buttons
+.logout{
+    @include home_style; 
+
+  
+}
+
+.home{
+    @include home_style;
+    top:2.3rem;
+  
+}
 
 
 
 
 
+// style products and vendor option buttons........
+.products_option{
+    @include home_style;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    cursor: pointer;
+    position: fixed ; 
+    top: 4.7rem;
+
+    
+
+     
+}
+
+.vendor_option{
+   @include home_style;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: fixed ; 
+    top:7rem;    
+     
+}
 
 
 
-// stylig for medical products..........................
+
+
+//  styling for medical products conatiner..........................
+
 .products_container{
     background-color: rgba(18, 18, 18, 0.4);
     font-size: 1rem;
@@ -146,11 +208,11 @@ strong{
     align-items:center;
     list-style-type: none;
     position: absolute;
-    top:0;
+    top:0px;
     width:50%;
     margin:0 auto;
-    margin-top: 9rem;
-    left:20%;
+    margin-top: 9.3rem;
+    left:22%;
   
 
 } 
@@ -164,5 +226,10 @@ strong{
 }
 
 .inner-container{
-    border-bottom: 2px solid white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.418);
+    padding:20px 0;
+    font-size: 1.2rem;
+    width:80%;
+ 
+    
 }

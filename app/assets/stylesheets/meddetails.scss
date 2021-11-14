@@ -21,17 +21,10 @@
     background-color: rgb(172, 211, 46);
     width:15vw;
     display:inline-flex;
-    margin:10px 0;
-    padding:5px 0 5px 18px;
-    animation: swipein 1s ease-out forwards 1;
-}
-@keyframes swipein {
-    0%{
-      width: 10vw;
-    }
-    100%{
-     width: 15vw;
-    }
+    margin:75px 0 0;
+    padding:10px 0 5px 18px;
+   
+
 }
 
 .order_details{
@@ -44,7 +37,7 @@
 .order_details1{
     background-color: rgba(57, 59, 48, 0.322);
     color:white;
-    width:41vw;
+    width:15vw;
     display:flex;
 
     padding:5px 0 5px 18px;
@@ -58,4 +51,51 @@
     font-weight:500;
 
 
+}
+
+.btn2{
+    outline: none;
+    border: none;
+    background-color: rgb(61, 103, 109);
+    color:white;
+    padding:8px;
+    font-size: 1rem;
+    margin-top: 10px;
+    display: flex; 
+    flex-direction: row;
+    // justify-content: flex-end;
+    // align-items: flex-end;
+    cursor: pointer;
+    // position: fixed ; 
+  
+ }
+
+
+
+//  styling order buttons.....
+
+
+@mixin btn {
+    outline: none;
+    border: none;
+    background-color: rgb(61, 103, 109);
+    color:white;
+    padding:8px;
+    font-size: 1rem;
+    margin-top: 10px;
+    display: flex; 
+    cursor: pointer; 
+}
+ .check_order{
+    @include btn;
+    position: fixed;
+    top:4.1rem;
+    
+}
+
+.back-btn{
+    @include btn;
+    position: fixed;
+    top:6.5rem;
+    
 }

@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 <%#= link_to 'Log out', destroy_user_session_path, method: :delete %>
-<%= button_to 'Log out',destroy_user_session_path, method: :delete, class: "btn2" =%>
-<%= button_to 'Go to Home', products_path, method: :get, class: "btn2" =%>
+<%= button_to 'Log out',destroy_user_session_path, method: :delete, class: "logout" =%>
+<%= button_to 'Go to Home', products_path, method: :get, class: "home" =%>
 
 <% else %>
 <%= link_to 'Log In',   new_user_session_path  %>

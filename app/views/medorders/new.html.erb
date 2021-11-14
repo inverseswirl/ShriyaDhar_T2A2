@@ -4,18 +4,11 @@
 
 <%= form_with  url: "/medorders" do |f|%>
 
-     <strong><%= f.label :name, "Enter your name for order" %></strong>
-      <%= f.text_field :name %><br>
+   <p style="padding-top: 50px;">  <strong><%= f.label :name, "Enter your name for order" %></strong>
+      <%= f.text_field :name %><p><br>
      <%= f.submit  'Initiate an order' %>
 <% end %>
 
-<%#= button_to 'Place an order', medorders_path ,method: :post, class: 'btn'%>
-
-
-
-
-
-<%#= link_to 'Place order', medorders_path%>
 
 
  

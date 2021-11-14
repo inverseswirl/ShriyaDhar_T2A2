@@ -1,4 +1,5 @@
- <%= form_with  url: "/medorder/#{@medorder.id}/customer/#{@customer.id}" do |f|%>
+
+  <%= form_with  url:  '/meddetails/new' do |f|%> 
 
       <strong><%= f.label :total_quantity, "Quantity to buy" %></strong>
       <%= f.number_field :total_quantity, in: 1..100, step: 1 %><br>

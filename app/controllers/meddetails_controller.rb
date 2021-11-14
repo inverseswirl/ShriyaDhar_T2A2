@@ -9,15 +9,13 @@ class MeddetailsController < ApplicationController
     @products = Product.all
     @customers= Customer.all
     @medorders =Medorder.all
-    @customer= Customer.find(params[:customer_id])
-    @medorder = Medorder.find(params[:id])
-  
+    
   end
 
   def create
-    
-    @customer= Customer.find(params[:customer_id])
-    @medorder = Medorder.find(params[:id])
+   p params 
+    @customer= Customer.last
+    @medorder = Medorder.last
     
     @meddetail= Meddetail.new(total_quantity: params[:total_quantity], product_id: params[:product_id], medorder_id: @medorder.id ) 
      @meddetail.save!
@@ -32,8 +30,9 @@ class MeddetailsController < ApplicationController
 
   def show
 
-    # @customer= Customer.find(params[:customer_id])
-    @medorder = Medorder.find(params[:id]) #finds order iwth 
+  
+    @customer= Customer.last
+    @medorder = Medorder.last 
     @customers= Customer.all
     @products = Product.all
     @meddetails = Meddetail.all

@@ -4,19 +4,19 @@
 
 <%= form_with  model: @customer do |f|%>
 
-     <strong><%= f.label :name, "Eneter your name" %></strong>
+    <p style ="padding-top: 30px;"> <strong><%= f.label :name, "Enter your name" %></strong></p>
       <%= f.text_field :name %><br>
        <% @customer.errors.full_messages_for(:name).each do |message| %>
           <div><%= message %></div>
       <% end %><br>
-      <strong><%= f.label :email, "Your Email" %></strong>
+    <p style ="padding-top: 30px;">  <strong><%= f.label :email, "Your Email" %></strong></p>
       <%= f.text_field :email %><br>
        <% @customer.errors.full_messages_for(:email).each do |message| %>
           <div><%= message %></div>
       <% end %>
-    <%= f.submit "Register" %>
+    <p style=" font-size:1rem;"><strong> <%= f.submit "Register" %></strong><p>
 
 <% end %>
-
+   <br>
 
 <%= button_to 'Already Registered', new_medorder_path ,method: :get, class: 'btn'%>

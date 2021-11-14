@@ -2,10 +2,59 @@
 
 <%= image_tag 'gear.png', alt: 'css',:class => "gear_rotating"%>
 
-<%= button_to 'Buy Med Products',  new_customer_path, method: :get, :class => "btn"%>
+<%= button_to 'Buy Med Products',  new_customer_path, method: :get, class: "products_option"%>
 
 
 <br>
-<%= button_to 'Sell as a vendor',  new_vendor_path, method: :get, :class => "btn vendor_option" %>
+<br>
+<%= button_to 'Sell as a vendor',  new_vendor_path, method: :get, class:  "vendor_option" %>
+
+<h1 style="text-align:center;text-decoration: underline;">MedPro</h1>
+<div class="products_container">
+
+<% @products.each do |product| %>
+<div class="inner-container">
+
+    <div>
+      <% if product.image_filename  %>
+        <%= image_tag "/images/#{product.image_filename}", width: '250px', class: 'product-image'%>
+        <% end %>
+    </div>
+    <div>
+        <strong>Name: </strong>
+        <%= product.product_name %>
+    </div>
+
+    <div>
+        <strong>Type: </strong>
+        <%= product.product_type %>
+    </div>
+
+    <div>
+        <strong>Description: </strong>
+        <%= product.product_description %>
+    </div>
+    <div>
+        <strong>Price: </strong>
+      $ <%= product.selling_price %></p> 
+    </div>
+    <div>
+        <strong>Seller </strong>
+          <%  @vendor = Vendor.find(product.vendor_id) %>
+       <%= @vendor.name %> 
+    </div>
+    <div>
+        <strong>Seller's Address: </strong>
+          <%  @vendor = Vendor.find(product.vendor_id) %>
+       <%= @vendor.city %>, <%= @vendor.state %> 
+    </div>
 
 
+     
+
+  
+     
+</div>
+<% end %>
+
+</div>

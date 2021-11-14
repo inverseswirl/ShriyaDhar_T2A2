@@ -66,7 +66,5 @@ end
     params.require(:customer).permit(:name, :email)
   end 
 
-  # def medorder_params
-  #   params.require(:medorder).permit(:customer_id)
-  # end
+
 end
