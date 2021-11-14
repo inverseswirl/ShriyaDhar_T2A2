@@ -53,3 +53,6 @@
 
 
 <%= button_to "Check details of order",  "/medorder/#{@medorder.id}/customer/#{@customer.id}/meddetails", method: :get, class: 'btn' %>
+
+
+<%= button_to 'Back', new_medorder_path ,method: :get, class: 'btn'%>
