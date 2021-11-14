@@ -3,8 +3,8 @@
 <div class="medical_products">
     <h1 class="headline">The Product</h1>
     <div>
-      <% if  @product.image_filename  %>
-        <%= image_tag "/images/#{@product.image_filename}", width: '250px'%>
+      <% if  @product.image.attached? %>
+        <%= image_tag url_for(@product.image), width: '250px'%>
         <% end %>
     </div>
     <div>

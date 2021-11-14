@@ -13,8 +13,8 @@
 
   <div class="field">
     <%= form.label :image %><br>
-    <%= form.file_field :image_filename %>
-    <% @product.errors.full_messages_for(:image_filename).each do |message| %>
+    <%= form.file_field :image,  accept: 'image/png, image/jpeg, image/jpg' %>
+    <% @product.errors.full_messages_for(:image).each do |message| %>
           <div><%= message %></div>
       <% end %>
   </div>
