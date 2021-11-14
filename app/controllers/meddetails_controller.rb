@@ -9,43 +9,41 @@ class MeddetailsController < ApplicationController
     @products = Product.all
     @customers= Customer.all
     @medorders =Medorder.all
-    @customer= Customer.find(params[:id])
-    @medorder = Medorder.find(params[:medorder_id])
+    @customer= Customer.find(params[:customer_id])
+    @medorder = Medorder.find(params[:id])
+  
   end
 
   def create
     
-     @customer= Customer.find(params[:id])
-     @medorder = Medorder.find(params[:medorder_id])
+    @customer= Customer.find(params[:customer_id])
+    @medorder = Medorder.find(params[:id])
     
-     @array_products_bought= []
     @meddetail= Meddetail.new(total_quantity: params[:total_quantity], product_id: params[:product_id], medorder_id: @medorder.id ) 
-     @meddetail.save
+     @meddetail.save!
+ 
 
-     if @meddetail.save
-        Meddetail.where(medorder_id: params[:medorder_id]).find_each
-             @meddetail.product_id << @array_products_bought
-        end
-     end
-        p @array_products_bought
-      p @meddetail_id
-      
-  
-
+    
   end
 
 
-  def show
-    @customer= Customer.find(params[:id])
-    @medorder = Medorder.find(params[:medorder_id])
+  
 
- 
-       
-    if @meddetail.nil?
-     render  :new
-    end
+
+  def show
+
+    # @customer= Customer.find(params[:customer_id])
+    @medorder = Medorder.find(params[:id]) #finds order iwth 
+    @customers= Customer.all
+    @products = Product.all
+    @meddetails = Meddetail.all
+    @price = []
+    @sum=0
+   
+
+  
     
-     
+  end
 end
 
 

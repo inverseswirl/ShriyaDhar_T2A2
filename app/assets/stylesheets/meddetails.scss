@@ -1,3 +1,61 @@
 // Place all the styles related to the Meddetails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+// .t-style{
+
+
+// }
+
+
+.table-container{
+    display: flex;
+
+}
+
+
+.order{
+    background-color: rgb(172, 211, 46);
+    width:15vw;
+    display:inline-flex;
+    margin:10px 0;
+    padding:5px 0 5px 18px;
+    animation: swipein 1s ease-out forwards 1;
+}
+@keyframes swipein {
+    0%{
+      width: 10vw;
+    }
+    100%{
+     width: 15vw;
+    }
+}
+
+.order_details{
+    background-color: rgb(172, 211, 46);
+    width:25vw;
+    display:flex;
+    margin:10px 0;
+    padding:5px 0 5px 18px;
+}
+.order_details1{
+    background-color: rgba(57, 59, 48, 0.322);
+    color:white;
+    width:41vw;
+    display:flex;
+
+    padding:5px 0 5px 18px;
+    text-align: center;
+}
+
+ td ,th {
+    background-color: rgba(57, 59, 48, 0.322);
+    color:white;
+    border: 2px solid white;
+    font-weight:500;
+
+
+}

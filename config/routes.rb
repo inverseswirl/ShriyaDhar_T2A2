@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   # post '/medorders', to: 'medorders#create', as: 'medorders'
   post '/medorders', to: 'medorders#create '
 
-  get 'customer/:id/medorder/:medorder_id', to: 'meddetails#new'
-  post 'customer/:id/medorder/:medorder_id', to: 'meddetails#create'
-  get  "/customer/:id/medorder/:medorder_id/meddetail/:meddetail_id", to: 'meddetails#show'
+  get 'medorder/:id/customer/:customer_id/', to: 'meddetails#new'
+  post 'medorder/:id/customer/:customer_id/', to: 'meddetails#create'
+  get  'medorder/:id/customer/:customer_id/meddetails', to: 'meddetails#show'
 
 
  

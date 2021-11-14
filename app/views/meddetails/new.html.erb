@@ -3,6 +3,7 @@
 
 
 
+
 <div class="products_container">
 
 <% @products.each do |product| %>
@@ -50,4 +51,5 @@
 
 </div>
 
-<%= button_to "Check details of order" , "/customer/#{@customer.id}/medorder/#{@medorder.id}/meddetail/#{@meddetail.id}", method: :get, class: 'btn' %>
+
+<%= button_to "Check details of order",  "/medorder/#{@medorder.id}/customer/#{@customer.id}/meddetails", method: :get, class: 'btn' %>
