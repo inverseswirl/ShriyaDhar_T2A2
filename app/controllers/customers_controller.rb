@@ -1,10 +1,11 @@
 class CustomersController < ApplicationController
   def index
     @customers = Customer.all
+    # @customers= Customer.joins(:medorders).where("medorders.id = 20").preload(:medorders)
   end
 
   def new 
-    @customer = Customer.new
+    @customer = Customer.new 
   end
 
   def create

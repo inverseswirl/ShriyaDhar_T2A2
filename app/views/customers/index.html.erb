@@ -1,2 +1,21 @@
 <h1>Customers#index</h1>
 <p>Find me in app/views/customers/index.html.erb</p>
+
+
+<%# Customer has many orders %>
+<% #@customers= Customer.eager_load(:medorders) %>
+
+<table>
+<tr><th>Name</th></tr>
+
+<tr>
+<td><%#= c.name %></td>
+<td><%#= c.medorders.customer_id %></td>
+
+</tr>
+
+
+
+
+
+</table>
