@@ -36,7 +36,8 @@
 
 
 <%= button_to 'Edit information',   edit_product_path, method: :get, class: "btn2" %>
-<%= button_to 'Back',   new_product_path, method: :get, class: "btn2" %>
+<br>
+<%= button_to 'Back',   new_product_path, method: :get, class: "btn" %>
 <ul>
  <li><%= link_to "Destroy", product_path(@product),
                   method: :delete,
