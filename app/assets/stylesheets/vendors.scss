@@ -22,4 +22,21 @@
     padding:6px;
 }
 
+.container-flex{
+    display: flex;
+    flex-direction: column;
+    padding:0;
+    background-color: rgba(18, 18, 18, 0.4);
+    margin-top:2.2rem;
+    align-items: center;
+   
+}
 
+
+.field{
+    color: white;
+    margin-left: 15px;
+    width: 200px;
+    padding:8px 0 7px 0;
+
+}

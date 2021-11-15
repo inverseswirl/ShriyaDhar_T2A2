@@ -37,16 +37,18 @@
           <div><%= message %></div>
       <% end %>
     </div>
-  </div>
 
 
-    <%= form.submit %>
+    <div class="field">
+      <%= form.submit %>
+    </div>
+
   </div>
 
 <% end %>
 
-<%= button_to 'Already a member',  new_product_path, method: :get %>
-<%= button_to 'Already a member,Check your listings',  vendors_path, method: :get, :class => "btn2" %>
+<%= button_to 'Already a member',  new_product_path, method: :get, class: 'btn'%>
+<%= button_to 'Check your listings',  vendors_path, method: :get, :class => "btn2" %>
 
 
 

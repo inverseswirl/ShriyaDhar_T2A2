@@ -2,7 +2,7 @@
 <h1 class="headline">Add Products to sell</h1>
 
 <div class="vendor_btns">
-<%= button_to 'Add new vendor info', new_vendor_path, method: :get, :class => "btn3 add_vendor" %>
+
 <%#= button_to 'Existing Member info', vendor_path, method: :get, :class => "btn3" %>
 </div>
 
@@ -55,10 +55,12 @@
           <div><%= message %></div>
       <% end %>
   </div>
-  </div>
 
-  <div class="form_btn">
+
+   <div class="field">
     <%= form.submit 'Save' %>
+    </div>
   </div>
 <% end %>
 
+<%= button_to 'Back', new_vendor_path, method: :get, :class => "btn" %>
