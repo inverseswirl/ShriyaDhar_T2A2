@@ -18,24 +18,37 @@ class MedordersController < ApplicationController
   end
 
   def create
-     
-         @customer = Customer.find_by(name: params[:name])
+     p params
+    @customer = Customer.find_by(name: params[:name])
+     @shopsession= Shopsession.new(customer_id: @customer.id)  
+     @shopsession.save!  
 
+
+    if    @shopsession.save! 
         
-          @medorder = Medorder.new(customer_id: @customer.id)  
-          @medorder.save! 
+      redirect_to   new_meddetail_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   
-      if   @medorder.save! 
-          
-         redirect_to   new_meddetail_path
-      else
-        render :new, status: :unprocessable_entity
-      end
+
+
+    # @medorder = Medorder.new(customer_id: @customer.id)  
+    # @medorder.save! 
+
+    # if   @medorder.save! 
+        
+    #   redirect_to   new_meddetail_path
+    # else
+    #   render :new, status: :unprocessable_entity
+    # end
+  
+  
+         
+  end
 
             
   
-  
-  end
 
   def show
 
