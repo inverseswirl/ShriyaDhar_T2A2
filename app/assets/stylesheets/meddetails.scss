@@ -99,3 +99,19 @@
     top:6.5rem;
     
 }
+
+
+// styling sort btn
+
+
+.sort-btn{
+
+@include btn;
+display: flex;
+align-items: flex-end;
+justify-content: flex-end;
+position:fixed;
+right:2vw;
+top:0%;
+
+}

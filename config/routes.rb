@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   post '/medorders', to: 'medorders#create '
 
   post   '/meddetails/new', to: 'meddetails#create'
+  get   '/meddetails/new/ascending', to:'meddetails#sort', as: 'sort'
   get  '/order_details', to: 'meddetails#show'
+
 
  root 'products#index'
 

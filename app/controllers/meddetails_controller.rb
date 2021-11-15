@@ -9,6 +9,7 @@ class MeddetailsController < ApplicationController
     @products = Product.all
     @customers= Customer.all
     @medorders =Medorder.all
+    # sort_products
     
   end
 
@@ -43,6 +44,16 @@ class MeddetailsController < ApplicationController
   
     
   end
+
+
+    def sort
+
+      @products= Product.order(:id) #sort ascending order all products using product id
+
+    end
+
+
+
 end
 
 
