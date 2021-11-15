@@ -18,8 +18,8 @@
 !/tmp/pids/
 !/tmp/pids/.keep
 # Ignore pidfiles, but keep the directory.
-# /public/images/*
-# !/public/images/.keep
+/public/images/*
+!/public/images/.keep
 
 
 
