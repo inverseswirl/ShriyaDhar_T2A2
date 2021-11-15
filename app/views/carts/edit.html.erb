@@ -1,0 +1,64 @@
+
+
+
+
+
+
+<div class="products_container">
+
+<% @products.each do |product| %>
+<div class="inner-container">
+
+   
+     <div>
+      <% if  product.image.attached? %>
+        <%= image_tag url_for(product.image), width: '250px', class: "product-image"%>
+        <% end %>
+    </div>
+    <div>
+        <strong>Name: </strong>
+        <%= product.product_name %>
+    </div>
+
+    <div>
+        <strong>Type: </strong>
+        <%= product.product_type %>
+    </div>
+
+    <div>
+        <strong>Description: </strong>
+        <%= product.product_description %>
+    </div>
+    <div>
+        <strong>Price: </strong>
+      $ <%= product.selling_price %></p> 
+    </div>
+    <div>
+        <strong>Seller's Address: </strong>
+          <%  @vendor = Vendor.find(product.vendor_id) %>
+       <%= @vendor.city %>, <%= @vendor.state %>, <%= @vendor.zipcode %> 
+    </div>
+            <strong>Product Id: </strong> 
+            <%= product.id %>
+
+<br>
+<br>
+      <%= render "buy" %>
+     
+
+
+     
+</div>
+<% end %>
+
+</div>
+
+
+
+<%= button_to 'Sort by product Id',  sort_path ,method: :get, class: 'sort-btn'%>
+<br>
+<%#= button_to "Place an order",  '/order_details', method: :get, class: 'check_order' %>
+<%= button_to "View Cart",  carts_path, method: :get, class: 'check_order' %>
+
+
+<%= button_to 'Back', new_medorder_path ,method: :get, class: 'back-btn'%>

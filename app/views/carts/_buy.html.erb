@@ -1,5 +1,5 @@
 
-  <%= form_with  url:  '/meddetails/new' do |f|%> 
+  <%= form_with  url:  '/carts/new' do |f|%> 
 
        <strong><%= f.label :product_id, "Enter product id" %></strong>
       <%= f.number_field :product_id, in: 1..100, step: 1 %>

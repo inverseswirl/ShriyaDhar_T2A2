@@ -9,24 +9,24 @@ class MedordersController < ApplicationController
     @customers=Customer.all
     @medorder = Medorder.new
 
+  end
  
 
 
    
 
 
-  end
 
   def create
-     p params
+    # name = params.require(:customer).permit(:name)
     @customer = Customer.find_by(name: params[:name])
      @shopsession= Shopsession.new(customer_id: @customer.id)  
      @shopsession.save!  
 
 
-    if    @shopsession.save! 
+    if  @shopsession.save! 
         
-      redirect_to   new_meddetail_path
+      redirect_to   new_cart_path
     else
       render :new, status: :unprocessable_entity
     end

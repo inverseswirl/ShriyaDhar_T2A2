@@ -1,0 +1,59 @@
+
+
+
+
+
+
+<%# Querying to get details of the order placed by customer %>
+
+<p class="order" ><strong> Cart Id: <%= @shopsession.id%></strong></p>
+
+<%# As there is one meddetails for many medorders, Meddetail is used to query based on its foreign key medorder_id.
+Also, one medorder further has one customer for that order and it helps to locate the customer name using its
+ customer_id foreign key. Here method chaining is used to filter and locate customer.%>
+
+<%  @cartitems.each do |d|%>
+   <% if @shopsession.id == d.shopsession_id  %>
+     <p class="order_details"><strong>Customer name: <%= d.shopsession.customer.name %> <%#= d.medorder.customer.id %> </strong></p
+     <% break %>
+   <% end %>
+<% end %>
+
+
+<div class="table-container">
+
+<table class="t-style1">
+   <tr>
+      <th>Product id </th>
+      <th>Product name</th>
+      <th>Total Quantity(items)</th>
+      <th>Unit Price</th>
+      <th>Total Price($)</th>
+   </tr>
+
+<%# Meddetail references products through product_id and this foreign key is used
+ to get product details like name, type or selling price %>
+
+   <%  @cartitems.each do |d|%>
+    <% if @shopsession.id == d.shopsession_id  %>
+         <tr>
+            <td><%=d.product_id %></td>
+            <td><%= d.product.product_name %></td>
+            <td><%= d.total_quantity %></td>
+            <td><%= d.product.selling_price %></td>
+            <td><%=  d.product.selling_price * d.total_quantity%></td>
+            <% @price << d.product.selling_price * d.total_quantity  %>     
+            <%# gets total price for all bought items in an array that helps to get the total sum %>   
+      <% end %>
+   <%end %>
+
+</table>
+
+    <%  @price.each {|price| @sum= @sum+ price } %>
+<p class="order_details1"><strong>Total Bill =>  $<%= @sum %>  </strong></p
+
+</div>
+
+
+<%= button_to 'Place Order & Pay', new_meddetail_path, class: 'btn2' %>
+<%#= button_to 'Edit Cart', edit_cart_path, class: 'btn2' %>
