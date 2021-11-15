@@ -1,3 +1,28 @@
 // Place all the styles related to the Customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@mixin btn {
+    outline: none;
+    border: none;
+    background-color: rgb(61, 103, 109);
+    color:white;
+    padding:8px;
+    font-size: 1rem;
+    margin-top: 10px;
+    display: flex; 
+    cursor: pointer; 
+}
+
+.back-btn{
+  @include btn;
+//   position:absolute;
+//   top:20rem;
+
+  margin-top: 20px;
+  justify-content: flex-start;
+  
+
+}

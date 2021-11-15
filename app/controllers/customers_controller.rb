@@ -27,7 +27,7 @@ end
       
   def show
   
-    
+   p params 
     @customer = Customer.find(params[:id])
     
     if @customer.nil?
