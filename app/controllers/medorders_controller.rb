@@ -19,18 +19,20 @@ class MedordersController < ApplicationController
 
   def create
     # name = params.require(:customer).permit(:name)
+
     @customer = Customer.find_by(name: params[:name])
-     @shopsession= Shopsession.new(customer_id: @customer.id)  
-     @shopsession.save!  
-
-
-    if  @shopsession.save! 
-        
-      redirect_to   new_cart_path
-    else
-      render :new, status: :unprocessable_entity
-    end
   
+      @shopsession= Shopsession.new(customer_id: @customer.id)  
+      @shopsession.save!  
+
+        if  @shopsession.save! 
+        redirect_to   new_cart_path
+      else
+        render :new, status: :unprocessable_entity
+      end
+
+
+
 
 
     # @medorder = Medorder.new(customer_id: @customer.id)  

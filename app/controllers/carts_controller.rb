@@ -63,7 +63,7 @@ class CartsController < ApplicationController
 
  def sort
 
-  @products= Product.order(:id) #sort ascending order all products using product id
+  @products= Product.order(:product_name) #sort ascending order all products using product id
 
   end
 

@@ -5,8 +5,9 @@
 <%= form_with  url: "/medorders" do |f|%>
 
    <p style="padding-top: 50px;">  <strong><%= f.label :name, "Enter your name for order" %></strong>
-      <%= f.text_field :name %><p><br>
-    
+     <%= f.text_field :name %><p><br>
+
+   
         <%= f.submit  'Initiate a shop session' %>
 
 <% end %>
