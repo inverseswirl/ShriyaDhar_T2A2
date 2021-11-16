@@ -6,7 +6,7 @@
 
 <%# Querying to get details of the order placed by customer %>
 
-<p class="order" ><strong> Cart Id: <%= @shopsession.id%></strong></p>
+<p class="order" ><strong> Cart</strong></p>
 
 <%# As there is one meddetails for many medorders, Meddetail is used to query based on its foreign key medorder_id.
 Also, one medorder further has one customer for that order and it helps to locate the customer name using its
@@ -55,5 +55,5 @@ Also, one medorder further has one customer for that order and it helps to locat
 </div>
 
 
-<%= button_to 'Place Order & Pay', new_meddetail_path, class: 'btn2' %>
+<%= button_to 'Place Order & Pay', '/order_details', class: 'btn2' %>
 <%#= button_to 'Edit Cart', edit_cart_path, class: 'btn2' %>

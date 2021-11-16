@@ -20,8 +20,8 @@ Rails.application.routes.draw do
   get   '/carts/new/ascending', to:'carts#sort', as: 'sort' #sort action
   get '/carts/new/details', to: 'carts#show'
 
-  # get  '/order_details', to: 'meddetails#show' #customer route for order_details
-
+   post '/order_details/', to: 'meddetails#create'
+   get '/order_details/:id', to: 'meddetails#show'
 
  root 'products#index'
 
