@@ -5,5 +5,5 @@ class User < ApplicationRecord
     # accepts_nested_attributes_for :customer
     devise :database_authenticatable, :registerable,
            :recoverable, :rememberable, :validatable 
-    has_many :customers
+  
 end

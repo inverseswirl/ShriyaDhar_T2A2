@@ -5,16 +5,11 @@
 <%= form_with  url: "/medorders" do |f|%>
 
    <p style="padding-top: 50px;">  <strong><%= f.label :name, "Enter your name for order" %></strong>
-     <%= f.text_field :name %><p><br>
+     <%= f.text_field :name %><p>
+    <p style="padding-top: 10px;color:  #7F4C4C; font-size: 0.8rem;"> <strong>Error: Name not found, Try again</strong></p><br>
 
-     <div class="field">
+    <div class="field">
       <%= f.submit  'Initiate a shop session' %>
     </div>
-
 <% end %>
-
-
-
- 
-
 

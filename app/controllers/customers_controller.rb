@@ -1,7 +1,8 @@
 class CustomersController < ApplicationController
+
   def index
     @customers = Customer.all
-    # @customers= Customer.joins(:medorders).where("medorders.id = 20").preload(:medorders)
+  
   end
 
   def new 
@@ -23,47 +24,49 @@ end
 
 
 
+def show
+
+  @customer = Customer.find(params[:id])
+  
+  if @customer.nil?
+   render  :new
+  end
+  
+end
 
       
-  def show
-   p params
-    @customer = Customer.find(params[:id])
-    
-    if @customer.nil?
-     render  :new
-    end
-    
-  end
          
+def edit
+  @customer = Customer.find(params[:id])
+  #finds customer with matching param id so that customer can edit info
+end
 
 
+def update
+  @customer= Customer.find(params[:id])
 
+  if @customer.update(customer_params)
 
-  def edit
-    @customer = Customer.find(params[:id])
+    redirect_to  customer_path(@customer)
+  else
+    render :edit, status: :unprocessable_entity
   end
+end
 
 
-  def update
-    @customer= Customer.find(params[:id])
 
-    if @customer.update(customer_params)
 
-      redirect_to  customer_path(@customer)
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
 
   def destroy
     @customer = Customer.find(params[:id])
     @customer.destroy
     redirect_to   new_customer_path
-   end
+  end
 
   private
   def customer_params
     params.require(:customer).permit(:name, :email, :user_id)
+    #validates and permits the paramters for mass assignment.
   end 
 
 

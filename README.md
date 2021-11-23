@@ -33,11 +33,24 @@ To help medical facilities buy medical equipment and devices online from multipl
 **R13	Wireframes for your app**
 
 
+
 **R14	An ERD for your app**
+
+![erd](./erd.png)
+
 
 **R15	Explain the different high-level components (abstractions) in your app**
 
+
 **R16	Detail any third party services that your app will use**
+
+**1. Devise**
+
+Devise is used in the app for User Authentication. 
+
+**Helpful Features:**
+It provided 
+
 
 **R17	Describe your projects models in terms of the relationships (active record associations) they have with each other**
 

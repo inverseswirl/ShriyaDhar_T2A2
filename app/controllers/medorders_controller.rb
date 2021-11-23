@@ -1,27 +1,29 @@
 class MedordersController < ApplicationController
+  #this controller initiates new shopsession for customers.It could be named better as Shopsession controller.
+
   def index
     @medorders = Medorder.all 
   end
+
   def new
- 
-    @products = Product.all 
-    @medorders = Medorder.all
     @customers=Customer.all
-    @medorder = Medorder.new
-
-  end
  
+ 
+  end
 
 
-   
-
-
-
+ 
   def create
-    # name = params.require(:customer).permit(:name)
-
+    
     @customer = Customer.find_by(name: params[:name])
-  
+
+    # => is true when no customer with that name is found
+        
+    if @customer.nil?
+      render "error"
+      #this helps catch name error if customer iwth the name isnt found
+      
+    else
       @shopsession= Shopsession.new(customer_id: @customer.id)  
       @shopsession.save!  
       
@@ -32,7 +34,20 @@ class MedordersController < ApplicationController
         render :new, status: :unprocessable_entity
       end
 
+    end
+
   end
+
+
+end
+   
+
+
+
+  
+  
+  
+
 
 
 
@@ -42,27 +57,6 @@ class MedordersController < ApplicationController
          
 
             
-  
-
-  def show
-
-  
- 
-       
-    # if @meddetail.nil?
-    #  render  :new
-    # end
     
-
-    
-  end
- 
-  #  def medorder_params
-  #   params.require(:medorder).permit(:customer_id)
-  # end
-  
-
-end
-
 
 
