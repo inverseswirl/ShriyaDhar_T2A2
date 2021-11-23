@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_15_123334) do
+ActiveRecord::Schema.define(version: 2021_11_23_050634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2021_11_15_123334) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email"
+    t.bigint "user_id"
   end
 
   create_table "meddetails", force: :cascade do |t|
@@ -120,6 +121,7 @@ ActiveRecord::Schema.define(version: 2021_11_15_123334) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cartitems", "products"
   add_foreign_key "cartitems", "shopsessions"
+  add_foreign_key "customers", "users"
   add_foreign_key "meddetails", "medorders"
   add_foreign_key "meddetails", "products"
   add_foreign_key "medorders", "customers"

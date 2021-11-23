@@ -26,8 +26,7 @@ end
 
       
   def show
-  
-   p params 
+   p params
     @customer = Customer.find(params[:id])
     
     if @customer.nil?
@@ -64,7 +63,7 @@ end
 
   private
   def customer_params
-    params.require(:customer).permit(:name, :email)
+    params.require(:customer).permit(:name, :email, :user_id)
   end 
 
 

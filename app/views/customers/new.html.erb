@@ -9,6 +9,12 @@
        <% @customer.errors.full_messages_for(:name).each do |message| %>
           <div><%= message %></div>
       <% end %><br>
+
+    <p style ="padding-top: 30px;">  <strong><%= f.label :user_id, "User ID" %></strong></p>
+      <%= f.number_field :user_id, in: 1..100, step: 1 %><br>
+       <% @customer.errors.full_messages_for(:user_id).each do |message| %>
+          <div><%= message %></div>
+      <% end %>
     <p style ="padding-top: 30px;">  <strong><%= f.label :email, "Your Email" %></strong></p>
       <%= f.text_field :email %><br>
        <% @customer.errors.full_messages_for(:email).each do |message| %>
