@@ -16,25 +16,10 @@
 <div> 
 
 
-
-
-
-
-
-
-
-
-<%#= link_to 'Place order', medorders_path%>
-
-
-
-
-
-
-
-
 <%if current_user.id == @customer.user_id %>
-
+<%#the id is added to check whether the customer signed in is same as the customer id %>
+<%# Though in reality the customer sign in will automatically update the customer table with name email and id.But since 
+website has both the vendor and buyer option, the option for adding customer id is given which gets added through post request. %>
 
 <%= button_to 'Edit information',   edit_customer_path, method: :get, class: "btn2" %>
 <%= button_to 'Back',   new_customer_path, method: :get, class: "btn2" %>
@@ -47,3 +32,17 @@
 </ul> 
 
 <%end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

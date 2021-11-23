@@ -11,16 +11,16 @@ class CustomersController < ApplicationController
   def create
   
     @customer= Customer.new(customer_params) 
-   
+  #new customer is created and saved and redirected to show the customer info. 
     if @customer.save!
-
-
       redirect_to @customer
      
     else 
     render :new, status: :unprocessable_entity
   end
 end
+
+
 
 
 
