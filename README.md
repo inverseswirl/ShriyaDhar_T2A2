@@ -8,6 +8,7 @@ It has been observed that in many countries across the world, healthcare facilit
 
 **R9	A link (URL) to your deployed app (i.e. website)**
 
+[**MedPro**](https://med-life-products.herokuapp.com/users/sign_in)
 
 **R10	A link to your GitHub repository (repo).**
 
@@ -15,6 +16,7 @@ It has been observed that in many countries across the world, healthcare facilit
 
 
 **R11 Description of your marketplace app (website), including:**
+
 **- Purpose**
 **- Functionality / features**
 **- Sitemap**
@@ -24,12 +26,14 @@ It has been observed that in many countries across the world, healthcare facilit
 
 
 **Purpose**
+
 To help medical facilities buy medical equipment and devices online from multiple vendors.
 It will help them to curb the shortage of supply and continue patient care effectively.
 
 **- Functionality / features**
 
 **Buyer**
+
 1. View the product lists
 2. Add items to the cart
 3. Place an order and generate bill details.
@@ -37,6 +41,7 @@ It will help them to curb the shortage of supply and continue patient care effec
 5. Update buyer information.
 
 **Vendor**
+
 1. Add vendor information.
 2. Add products to sell.
 3. Update information on products to sell.
@@ -45,12 +50,14 @@ It will help them to curb the shortage of supply and continue patient care effec
 **Sitemap**
 
 ![sitemap](./docs/sitemap.png)
+Source:self-made using draw.io
 
 
 **Screenshots**
 
-
-
+![signin](./docs/signin.png)
+![product](./docs/productpage.png)
+![signin](./docs/vendorpage.png)
 
 
 
@@ -64,11 +71,17 @@ The target audience is the vendors or suppliers of medical equipment and the med
 **Tech stack (e.g. html, css, deployment platform, etc)**
 
 **Coding languages:**
+
 - Ruby
 - HTML/CSS
 
 **Frameworks:**
+
 - Ruby on Rails
+
+**Deployment**
+
+- Heroku
 
 
 
@@ -91,12 +104,14 @@ The target audience is the vendors or suppliers of medical equipment and the med
 The wireframes are provided in wireframes folder inside docs folder.
 
 Example:
+
 ![wireframe](./docs/wireframes/Home_page_Mobile.png)
 
 
 **R14	An ERD for your app**
 
 ![erd](./docs/erd.png)
+Source:self-made using Lucidchart
 
 
 **R15	Explain the different high-level components (abstractions) in your app**
@@ -117,24 +132,30 @@ The controllers in the app help to route the HTTP request to the appropriate act
 The controllers generated are:
 
 **Products Controller:**
+
 It helps to obtain data from Product model and displays through views the newly added products complete product list. also, it helps to update or edit the products information.
 
 **Customers Controller**
+
 It helps to obtain data from Customer model and displays through views the customer information. It also helps to update or edit the customer's information.
 
 **Carts controller**
+
 It helps to obtain data from Cartitem model and displays through views the cart information. Using this controller, we can create new cartitems and add them to the cart.
 
 **Medorders controller**
+
 It is a binder controller that helps to extract data from Customer model and create new shopsession for that customer.
 So, it deals with two models - Customer and Shopsession.
 
 
 **Meddetails controller**
+
 This controller has very dynamic use. It helps to create new data for Medorder and Meddetail models and saves them. This helps to update the actual materialized order with its details.
 
 
 **Vendors controller**
+
 It helps to obtain data from Vendor model and displays through views the vendor information. It also helps to update or edit the vendor information.
 
 **Views**
@@ -142,9 +163,11 @@ It helps to obtain data from Vendor model and displays through views the vendor 
 There are separate views for each controller. Each controller has an index, new, edit and show.html.erb files in it. The view compiles the response by the controller and displays it to the user.
 
 **Database:**
+
 The marketplace app uses the PostgreSQL database system.PostgreSQL is a relational database system. Each model object maps to respective database tables.  
 
 **Web server:**
+
 Rails app comes with default Puma server. It gets started by using the command `rails s` in the terminal. This helps to initiate a web server on the development machine.
 
 
@@ -155,6 +178,7 @@ Rails app comes with default Puma server. It gets started by using the command `
 Devise is used in the app for User Authentication. It is based on the Warden framework that provides authentication for the Rails application.
 
 **Helpful Features:**
+
 - It provides a user sign up and sign in option for user authentication.
 - It helps to store user password in hashes in encrypted form when the user logs in.
 - It provides inbuilt devise views for registrations, sessions, conformation, mailer etc.
@@ -163,9 +187,14 @@ Devise is used in the app for User Authentication. It is based on the Warden fra
 
 
 **2. S3 AWS cloud storage**
+
+Rails has inbuilt active storage that helps developers to use and connect to online cloud storage services like Amazon S3.
+The configuration is crucial with the setting up of environment variables such as access keys.
 The marketplace app uses the Amazon S3 cloud bucket to store the product images uploaded using the upload option in the new product form.
 
+
 **Helpful features:**
+
 - It provides more active cloud data storage. So there is no need to worry about saving a lot of images within the app.
 - It comes at zero costs under the free plan. This plan is used currently for this app. So, the cost of service is essentially free.
 - The uploads are faster.
@@ -178,6 +207,7 @@ The marketplace app uses the Amazon S3 cloud bucket to store the product images 
 
 
 **1.belongs_to association**
+
 It refers to the association where every new instance created for a model belongs_to one instance of another model.
 
 Customer model helps to define the data for customers such as their name or email. Customer model connects with the `User` model, `Medorders` and `Shopsession` models. Customer model has a `belongs_to` association with the User model.
@@ -195,6 +225,7 @@ When the customer chooses to view the cart and continues to place an order, the 
 There is a separate `Vendor` model. It **has_many** association with the `Product` model as a single vendor can sell or list many products. One vendor **has_many products.**
 
 **Polymorphic association**
+
 It is an association where one model is associated with two other models. 
 
 Medorders and Products models have many to many relationships as many medorders can have many products and many products can be bought in many medorders.  So, Meddetails **belongs_to** Medorders & Products. It references these two tables. On the other side of the association, **Products and Medorders** have a **has_many** association with Meddetails.
@@ -208,6 +239,7 @@ Cartitem is associated with Shopsession and Product; and has shopsession_id and 
 **R18	Discuss the database relations to be implemented in your application**
 
 **Database Tables in the database**
+
 1. users
 2. customers
 3. vendors
@@ -218,6 +250,7 @@ Cartitem is associated with Shopsession and Product; and has shopsession_id and 
 8. meddetails
 
 **Primary key**
+
 Primary key describes every row of the table uniquely.
 
 **Foreign key**
@@ -261,5 +294,6 @@ products and medorders have a many-to-many relationship. So, a new table is crea
 **R20	Describe the way tasks are allocated and tracked in your project**
 
 The project management tools used for tracking project activities:
+
 1. [Agile board project tracking ](https://trello.com/b/vvhqCtBf/agile-boardprojecttracking)
 2. [Kanban tracking](https://trello.com/b/2gLoKbd5/kanbantracking)

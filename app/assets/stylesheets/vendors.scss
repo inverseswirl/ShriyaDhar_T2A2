@@ -40,3 +40,68 @@
     padding:8px 0 7px 0;
 
 }
+
+// vendor-listing style
+.vendor_listing{
+    background-color: rgba(18, 18, 18, 0.25);
+    font-size: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    position: absolute;
+    top: 0px;
+    width:50%;
+    right:0px;
+    height:100vh;
+    margin:0 0;
+    left:22%;
+}
+
+// styling button
+.id-submit{
+    padding: 10px;
+    display: flex;
+    text-align: center;
+    outline: none;
+    border:1px solid rgb(61, 103, 109);
+    background-color: rgb(61, 103, 109);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+
+}
+
+// styling form fields number field and label
+
+.vendor-id{
+    border:none;
+    outline:none;
+    margin: 20px 0 10px 0;
+    padding: 6px;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius:4px; 
+   
+}
+
+
+.label{
+    border:1px solid white;
+    border-radius: 110px 40px;
+    padding: 10px 12px;
+    font-size: 1.4rem;
+    display:flex;
+}
+
+// styling headline
+
+.headline-product-listing{
+
+    color: rgb(61, 103, 109);
+    position: fixed;
+    top:1px;
+    right: 10px;
+}

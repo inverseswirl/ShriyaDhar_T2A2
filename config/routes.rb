@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   resources :meddetails
 
 
-
+  get '/vendor_listings', to:'vendors#vendor_id'
+  post '/vendor_listings', to:'vendors#vendor_listing'
   post '/medorders', to: 'medorders#create '
 
   post   '/carts/new', to: 'carts#create'

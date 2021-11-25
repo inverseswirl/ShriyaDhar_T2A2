@@ -1,0 +1,50 @@
+
+<h1 class="headline-product-listing">Product listings</h1>
+
+<div class="products_container">
+
+
+ <% @products.each do |product| %>
+  <% if product.vendor_id == @vendor.id %>
+
+<div class="inner-container">
+    <div style ="text-align:center; display:block;">
+      <% if  product.image.attached? %>
+        <%= image_tag url_for(product.image), width: '250px'%>
+        <% end %>
+    </div>
+    <div>
+        <strong>Name: </strong>
+        <%= product.product_name %>
+    </div>
+
+    <div>
+        <strong>Type: </strong>
+        <%= product.product_type %>
+    </div>
+
+    <div>
+        <strong>Description: </strong>
+        <%= product.product_description %>
+    </div>
+    <div>
+        <strong>Price: </strong>
+      $ <%= product.selling_price %></p> 
+    </div>
+    <div>
+        <strong>Seller's Address: </strong>
+       <%= @vendor.city %>, <%= @vendor.state %>, <%= @vendor.zipcode %> 
+    </div>
+      
+ </div>
+
+<% end  %>    <%#if loop%>
+
+
+<% end %>    <%#for loop%>
+
+</div>
+
+<%= button_to 'Back', '/vendor_listings', method: :get, class: 'back-btn', style: 'top:100px;'%>
+
+<%# this button above helps to take user back to vendor listings once they have checked their listings. %>

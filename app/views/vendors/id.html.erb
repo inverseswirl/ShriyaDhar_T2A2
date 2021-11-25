@@ -1,0 +1,25 @@
+
+
+<div >
+
+<%= form_with  url:'/vendor_listings', method: :post,class: 'vendor_listing' do |f| %>
+
+<p class="label"><%= f.label :id, "Add your Vendor Id"%></p>
+
+<%= f.number_field :id, in: 1..Vendor.maximum('id'), step: 1, class: 'vendor-id'%> <%#takes vendor id input.%>
+
+
+   <%= f.submit  '>>', class: "id-submit"%>
+
+<% end %>
+
+<%= button_to 'Back', new_vendor_path, method: :get, class: 'back-btn', style: 'top:100px;'%>
+
+
+
+
+
+
+
+
+
