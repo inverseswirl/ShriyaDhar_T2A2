@@ -2,12 +2,14 @@ class VendorsController < ApplicationController
  
   def index
     @vendors = Vendor.all
+    @products = Product.all
   end
 
   def new
     @vendor = Vendor.new 
     
   end
+
   def show
     @vendor = Vendor.find(params[:id])
 
@@ -20,23 +22,23 @@ class VendorsController < ApplicationController
   
   def create
   
- 
     @vendor= Vendor.new(vendor_params) 
    if @vendor.save
-     
-      redirect_to @vendor
+     redirect_to @vendor
      
     else 
      render :new, status: :unprocessable_entity
+    end
+  end
+     
+ 
+  def edit
+    @vendor = Vendor.find(params[:id])
   end
 
 
  
-  end
 
-  def edit
-    @vendor = Vendor.find(params[:id])
-  end
 
   def update
     @vendor= Vendor.find(params[:id])

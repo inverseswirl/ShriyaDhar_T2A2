@@ -1,23 +1,41 @@
-<h1 class="headline">All Vendors</h1>
+<h1 class="headline">Vendor product listings</h1>
 
 
 
-<table class ="vendor_info_table">
-<tr>
-    <th>No.</th>
-    <th>Name</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zipcode</th>
-</tr> 
-<% @vendors.each do |vendor| %>
-<tr> 
-<td class="vendor_info"> <%= vendor.id  %>  </td> 
-<td class="vendor_info"> <%= vendor.name  %>  </td> 
-<td class="vendor_info"> <%= vendor.city %>  </td> 
-<td class="vendor_info"> <%= vendor.state %> </td> 
-<td class="vendor_info"> <%= vendor.zipcode %> </td> 
+<% @products.each do |product| %>
+<div class="inner-container">
 
-</tr>
-<% end %>
-</table> 
+     <div>
+      <% if  product.image.attached? %>
+        <%= image_tag url_for(product.image), width: '250px', class: "product-image"%>
+        <% end %>
+    </div>
+    <div>
+        <strong>Name: </strong>
+        <%= product.product_name %>
+    </div>
+
+    <div>
+        <strong>Type: </strong>
+        <%= product.product_type %>
+    </div>
+
+    <div>
+        <strong>Description: </strong>
+        <%= product.product_description %>
+    </div>
+    <div>
+        <strong>Price: </strong>
+      $ <%= product.selling_price %></p> 
+    </div>
+    <div>
+        <strong>Seller </strong>
+          <%  @vendor = Vendor.find(product.vendor_id) %>
+       <%= @vendor.name %> 
+    </div>
+    <div>
+        <strong>Seller's Address: </strong>
+          <%  @vendor = Vendor.find(product.vendor_id) %>
+       <%= @vendor.city %>, <%= @vendor.state %> 
+    </div>
+

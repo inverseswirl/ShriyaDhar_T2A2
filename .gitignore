@@ -42,8 +42,8 @@ yarn-debug.log*
 .yarn-integrity
 
 #Ignore ppt and docs folder in folder tree
-/ppt
-/docs
+# /ppt
+# /docs
 
 #ignore
 .DS_Store
