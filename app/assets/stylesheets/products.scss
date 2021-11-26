@@ -246,3 +246,12 @@ strong{
   
 
 }
+
+
+// styling user id
+.user-id{
+    @include home_style();
+    top: 0rem;
+    width: 8%;
+    right:0px;
+}

@@ -38,3 +38,28 @@
   justify-content: center;
 
 }
+// styling customer-form
+
+.customer-form{
+  background-color: rgba(18, 18, 18, 0.4);
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  list-style-type: none;
+  // position: absolute;
+  top:0px;
+  width:50%;
+  margin:0 auto;
+  margin-top: 0rem;
+  left:22%;
+
+}
+// style register field
+
+.register-customer{
+  margin-bottom: 10px;
+  
+}
